@@ -60,9 +60,12 @@ function readPost() {
       "https://i.natgeofe.com/k/093c14b4-978e-41f7-b1aa-3aff5d1c608a/gray-wolf-closeup_2x3.jpg";
     let h5 = document.createElement("h5");
     h5.innerText = "esenturov.17";
-    let threePoint = document.createElement("div");
-    threePoint.classList.add("three-point");
-    let span = document.createElement("span");
+    let icons = document.createElement("div");
+    icons.classList.add("icons");
+    let deleteBtn = document.createElement("span");
+    deleteBtn.innerHTML = ' <ion-icon name="trash-outline"></ion-icon>';
+    let editBtn = document.createElement("span");
+    editBtn.innerHTML = '<ion-icon name="pencil-outline"></ion-icon> ';
     let picture = document.createElement("img");
     picture.classList.add("picture");
     picture.src = el.image;
@@ -102,10 +105,10 @@ function readPost() {
 
     // append
     post.append(postHead, picture, postTitle);
-    postHead.append(name, threePoint);
+    postHead.append(name, icons);
     name.append(ava);
     ava.append(avaImg, h5);
-    threePoint.append(span);
+    icons.append(deleteBtn, editBtn);
     postTitle.append(postInfo, bookmarkIcon);
     postInfo.append(likeComment, quote);
     likeComment.append(like1, like2, like3);
