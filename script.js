@@ -8,6 +8,44 @@ closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
+//! Avatar
+let ava_modal = document.querySelector(".ava-modal");
+let openAva = document.querySelector(".add-avatar");
+let closeAva = document.querySelector(".ava-close");
+openAva.addEventListener("click", () => {
+  ava_modal.style.display = "flex";
+});
+closeAva.addEventListener("click", () => {
+  ava_modal.style.display = "none";
+});
+
+let avaModal = document.querySelector(".ava-modal");
+let avaInput = document.querySelector(".ava-input");
+let avaCreate = document.querySelector(".ava-create");
+let avaClose = document.querySelector(".ava-close");
+let avatarProfile = document.querySelector(".avatar");
+let deleteAvatar = document.querySelector(".delete-avatar");
+readAvatar();
+
+avaCreate.addEventListener("click", () => {
+  let data = JSON.parse(localStorage.getItem("avatar")) || "";
+  data = avaInput.value;
+  localStorage.setItem("avatar", JSON.stringify(data));
+  readAvatar();
+  ava_modal.style.display = "none";
+});
+function readAvatar() {
+  let data = JSON.parse(localStorage.getItem("avatar"));
+  avatarProfile.src = data
+    ? data
+    : "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+}
+deleteAvatar.addEventListener("click", () => {
+  localStorage.removeItem("avatar");
+  readAvatar()
+});
+//! Avatar
+
 //
 let list = document.querySelector(".main");
 let image = document.querySelector(".image");

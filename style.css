@@ -148,7 +148,7 @@ h5 {
   align-items: center;
   gap: 10px;
 }
-.icons ion-icon{
+.icons ion-icon {
   font-size: 24px;
   cursor: pointer;
   background: rgb(202, 191, 191);
@@ -220,6 +220,38 @@ p {
   font-size: 16px;
 }
 .modal-window .close {
+  background: rgb(177, 16, 16);
+  color: #fff;
+}
+
+.ava-modal {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  gap: 15px;
+}
+
+.ava-modal input {
+  width: 200px;
+  height: 30px;
+  padding-left: 15px;
+  border-radius: 20px;
+}
+.ava-modal button {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: rgb(252, 252, 46);
+  font-size: 16px;
+}
+.ava-modal .ava-close {
   background: rgb(177, 16, 16);
   color: #fff;
 }
